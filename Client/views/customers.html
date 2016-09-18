@@ -1,0 +1,30 @@
+<div>
+    <h2> CUSTOMERS </h2>
+    </div> 
+        <hr/>
+        <div>
+    Filter   :    <input type="text" ng-model="customfilter.name">
+    </div>
+    <br/>
+    <br/>
+    <div>    
+    <table class="table">
+    <tr>
+    <th ng-click="sortby='name'">Name  </th>
+    <th ng-click="sortby='city'">City  </th>    
+    <th ng-click="sortby='orderTotal'">Order Total  </th>    
+    <th ng-click="sortby='joined'">Joined  </th>    
+    <th ng-click="sortby='orders.id'">Orders  </th>    
+    </tr>    
+        <tr ng-repeat="name in data | filter: customfilter | orderBy:sortby">
+            <td> {{ name.name}}</td>
+            <td> {{ name.city}}</td>
+            <td> {{ name.orderTotal | currency}}</td>
+            <td> {{ name.joined | date:'yyyy'}}</td>            
+            <td><a href="#/orders/{{name.id}}"> view orders </td>            
+        </tr>
+        
+    </table>
+        
+    <h4> Total Customers : {{ data.length }} :  {{ref}} </h4>    
+    </div>

@@ -1,0 +1,7 @@
+    [
+    {name:"Rakesh",city:"Bangalore",orderTotal:"12.345",joined:'2015-2-3'},
+    {name:"Ram",city:"Bangalore",orderTotal:"20.345"},joined:'2016-3-3'}
+    {name:"Dinesh",city:"Mumbai",orderTotal:"34.5"},joined:'2010-4-3'}
+    {name:"Sukhi",city:"Bangalore",orderTotal:"123.45",joined:'2014-5-3'},
+    {name:"Iqbal",city:"Delhi",orderTotal:"45.54"}
+    ]
