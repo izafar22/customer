@@ -9,25 +9,26 @@
     {id:321,name:'Iqbal',city:'Delhi',orderTotal:'5.54',joined:'2012-03-04',orders:[{id:24,product:'usb',total:100}]}
     ]
         
-        var factory={};
+        return{
         
-        factory.getCustomers=function(){
+        getCustomers:function(){
             return customers;
-        };
+        },
         
-        factory.getCustomer = function(customerId){
+        getCustomer:function(customerId){
             for (var i=0,len=customers.length;i<len;i++){
                 if(customers[i].id === parseInt(customerId))
                     return customers[i];
             }
         return {}; 
-        };
+        }
         
-        return factory;
+            
+ }
     };
     
     angular.module('myApp')
-    .factory('customerFactory',customerFactory)
+    .factory('customerFactory',customerFactory);
     
     
 }());
