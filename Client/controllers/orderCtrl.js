@@ -1,14 +1,23 @@
 (function(){
     
     var orderCtrl = function($scope,$routeParams,customerFactory){
-        $scope.pol="I am working";
+        
         var customerId =$routeParams.customerId;
         $scope.customer=null;
-        console.log('-------' + customerId); 
-    
-            $scope.customer = customerFactory.getCustomer(customerId);
-            //console.log('-------',customerId);
-         
+        
+           function init(){
+            customerFactory.getCustomer(customerId)
+            .success(function(customer){
+                console.log('---orderctrl---',customer);
+                $scope.customer=customer[0];
+                console.log("play--2");
+            })
+            .error(function(){
+                console.log("error");
+            });
+        
+           }
+        init();
     };
     
     orderCtrl.$inject=['$scope','$routeParams','customerFactory'];

@@ -9,8 +9,8 @@
     </tr>
     <tr ng-repeat="order in customer.orders">
     <td> {{order.product}} </td>
-    <td> {{order.total}} </td>
+    <td> {{order.total | currency}} </td>
     </tr>
     </table>
- {{ pol }}
+ 
 </div>
